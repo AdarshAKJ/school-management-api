@@ -1,0 +1,22 @@
+version: "3"
+services:
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 7479*Ad*9572#
+      MYSQL_DATABASE: task_management
+    ports:
+      - "3306:3306"
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_USER: root
+      DB_PASSWORD: 7479*Ad*9572#
+      DB_NAME: task_management
+      JWT_SECRET: your_jwt_secret

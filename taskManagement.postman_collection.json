@@ -1,0 +1,733 @@
+{
+	"info": {
+		"_postman_id": "d3177e84-6beb-4f7a-b380-1c866d68077c",
+		"name": "taskManagement",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32248441"
+	},
+	"item": [
+		{
+			"name": "task",
+			"item": [
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzI0NTMzMDcxLCJleHAiOjE3MjQ1MzY2NzF9.Bsyg1kUC5VSBw_UlQjjsXcrNx-U8Ewx-gpsaEcEMrTw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"AdarshJha\",\r\n    \"password\":\"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8800/api/task/list",
+							"host": [
+								"localhost"
+							],
+							"port": "8800",
+							"path": [
+								"api",
+								"task",
+								"list"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzI0NTMzMDcxLCJleHAiOjE3MjQ1MzY2NzF9.Bsyg1kUC5VSBw_UlQjjsXcrNx-U8Ewx-gpsaEcEMrTw",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"AdarshJha\",\r\n    \"password\":\"1234\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8800/api/task/list",
+									"host": [
+										"localhost"
+									],
+									"port": "8800",
+									"path": [
+										"api",
+										"task",
+										"list"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "751"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2ef-7vg33V+ap3jz9pUJG3R7VpphHLg\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 24 Aug 2024 21:24:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"tasks\": [\n        {\n            \"id\": 1,\n            \"title\": \"New Task\",\n            \"description\": \"Task description\",\n            \"status\": \"Todo\",\n            \"priority\": \"High\",\n            \"due_date\": \"2024-07-30T18:30:00.000Z\",\n            \"userId\": 1\n        },\n        {\n            \"id\": 2,\n            \"title\": \"New Task\",\n            \"description\": \"Task description\",\n            \"status\": \"Todo\",\n            \"priority\": \"High\",\n            \"due_date\": \"2024-07-30T18:30:00.000Z\",\n            \"userId\": 1\n        },\n        {\n            \"id\": 3,\n            \"title\": \"New Task\",\n            \"description\": \"Task description\",\n            \"status\": \"Todo\",\n            \"priority\": \"High\",\n            \"due_date\": \"2024-07-30T18:30:00.000Z\",\n            \"userId\": 1\n        },\n        {\n            \"id\": 4,\n            \"title\": \"New Task\",\n            \"description\": \"Task description\",\n            \"status\": \"Todo\",\n            \"priority\": \"High\",\n            \"due_date\": \"2024-07-30T18:30:00.000Z\",\n            \"userId\": 1\n        },\n        {\n            \"id\": 5,\n            \"title\": \"New Task1\",\n            \"description\": \"Task description\",\n            \"status\": \"Todo\",\n            \"priority\": \"High\",\n            \"due_date\": \"2024-07-30T18:30:00.000Z\",\n            \"userId\": 1\n        }\n    ]\n}"
+						},
+						{
+							"name": "Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzI0NTMzMDcxLCJleHAiOjE3MjQ1MzY2NzF9.Bsyg1kUC5VSBw_UlQjjsXcrNx-U8Ewx-gpsaEcEMrTw",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"AdarshJha\",\r\n    \"password\":\"1234\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8800/api/task/list",
+									"host": [
+										"localhost"
+									],
+									"port": "8800",
+									"path": [
+										"api",
+										"task",
+										"list"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "462"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1ce-P3SW8TO+EADoH7CIfMg8J1+bjP0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 24 Aug 2024 21:33:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"tasks\": [\n        {\n            \"id\": 1,\n            \"title\": \"New Task\",\n            \"description\": \"Task description\",\n            \"status\": \"Todo\",\n            \"priority\": \"High\",\n            \"due_date\": \"2024-07-30T18:30:00.000Z\",\n            \"userId\": 1\n        },\n        {\n            \"id\": 3,\n            \"title\": \"New Task\",\n            \"description\": \"Task description\",\n            \"status\": \"Todo\",\n            \"priority\": \"High\",\n            \"due_date\": \"2024-07-30T18:30:00.000Z\",\n            \"userId\": 1\n        },\n        {\n            \"id\": 4,\n            \"title\": \"New Task\",\n            \"description\": \"Task description\",\n            \"status\": \"Todo\",\n            \"priority\": \"High\",\n            \"due_date\": \"2024-07-30T18:30:00.000Z\",\n            \"userId\": 1\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzI0NTMzMDcxLCJleHAiOjE3MjQ1MzY2NzF9.Bsyg1kUC5VSBw_UlQjjsXcrNx-U8Ewx-gpsaEcEMrTw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"New Task1\",\r\n    \"description\": \"Task description\",\r\n    \"status\": \"Todo\",\r\n    \"priority\": \"High\",\r\n    \"due_date\": \"2024-07-31\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8800/api/task/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8800",
+							"path": [
+								"api",
+								"task",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzI0NTMzMDcxLCJleHAiOjE3MjQ1MzY2NzF9.Bsyg1kUC5VSBw_UlQjjsXcrNx-U8Ewx-gpsaEcEMrTw",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"New Task1\",\r\n    \"description\": \"Task description\",\r\n    \"status\": \"Todo\",\r\n    \"priority\": \"High\",\r\n    \"due_date\": \"2024-07-31\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8800/api/task/create",
+									"host": [
+										"localhost"
+									],
+									"port": "8800",
+									"path": [
+										"api",
+										"task",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "36"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"24-90XVIxC7RC687Rq1nHt8qAAKeLc\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 24 Aug 2024 21:24:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Task has been created.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzI0NTMzMDcxLCJleHAiOjE3MjQ1MzY2NzF9.Bsyg1kUC5VSBw_UlQjjsXcrNx-U8Ewx-gpsaEcEMrTw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"New Task1\",\r\n    \"description\": \"Task description\",\r\n    \"status\": \"Todo90\",\r\n    \"priority\": \"High\",\r\n    \"due_date\": \"2024-07-31\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8800/api/task/update/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8800",
+							"path": [
+								"api",
+								"task",
+								"update",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzI0NTMzMDcxLCJleHAiOjE3MjQ1MzY2NzF9.Bsyg1kUC5VSBw_UlQjjsXcrNx-U8Ewx-gpsaEcEMrTw",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"New Task1\",\r\n    \"description\": \"Task description\",\r\n    \"status\": \"Todo90\",\r\n    \"priority\": \"High\",\r\n    \"due_date\": \"2024-07-31\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8800/api/task/update/2",
+									"host": [
+										"localhost"
+									],
+									"port": "8800",
+									"path": [
+										"api",
+										"task",
+										"update",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "24"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"18-qF/LN3zPrWmVXHoW9F02VjAv6P0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 24 Aug 2024 21:27:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "\"Task has been updated.\""
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzI0NTMzMDcxLCJleHAiOjE3MjQ1MzY2NzF9.Bsyg1kUC5VSBw_UlQjjsXcrNx-U8Ewx-gpsaEcEMrTw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8800/api/task/delete/5",
+							"host": [
+								"localhost"
+							],
+							"port": "8800",
+							"path": [
+								"api",
+								"task",
+								"delete",
+								"5"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzI0NTMzMDcxLCJleHAiOjE3MjQ1MzY2NzF9.Bsyg1kUC5VSBw_UlQjjsXcrNx-U8Ewx-gpsaEcEMrTw",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8800/api/task/delete/5",
+									"host": [
+										"localhost"
+									],
+									"port": "8800",
+									"path": [
+										"api",
+										"task",
+										"delete",
+										"5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "24"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"18-5v7xAdrWhAO6YSaEO4lkizFRxmA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 24 Aug 2024 21:32:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "\"Task has been deleted.\""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"AdarshJha\",\r\n    \"password\":\"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8800/api/user/register",
+							"host": [
+								"localhost"
+							],
+							"port": "8800",
+							"path": [
+								"api",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"AdarshJha\",\r\n    \"password\":\"1234\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8800/api/user/register",
+									"host": [
+										"localhost"
+									],
+									"port": "8800",
+									"path": [
+										"api",
+										"user",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "24"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"18-EyymVpe/KChD0PkOdFcrKiUB53s\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 24 Aug 2024 20:19:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "\"User has been created.\""
+						}
+					]
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"AdarshJha\",\r\n    \"password\":\"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8800/api/user/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8800",
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"AdarshJha\",\r\n    \"password\":\"1234\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8800/api/user/login",
+									"host": [
+										"localhost"
+									],
+									"port": "8800",
+									"path": [
+										"api",
+										"user",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "197"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c5-ojfgfs7YnxGwWGQm4zfF41ZTcDU\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 24 Aug 2024 20:43:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Login successful\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzI0NTMyMTk3LCJleHAiOjE3MjQ1MzU3OTd9.lMh_pDqab83R8IY2KXw2wFdht7NcdpciXQP9gpGyuow\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
