@@ -1,53 +1,70 @@
 import { db } from "../connect.js";
-import bcrypt from 'bcryptjs';
-import jwt from 'jsonwebtoken';
 
-export const register = (req, res) => {
-    // check user if exist;
-    const q = "select * from users where username = ?";
+export const addSchool = async (req, res) => {
+    const { name, address, latitude, longitude } = req.body;
 
-    db.query(q, [req.body.username], (err, data) => {
-        if (err) return res.status(500).json(err);
+    // Basic validation
+    if (!name || !address || !latitude || !longitude) {
+        return res.status(400).json({ error: 'All fields are required' });
+    }
 
-        if (data.length) return res.status(409).json("User aleardy exists!");
+    try {
+        //
+        const q = "INSERT INTO schools(`name`, `address`,`latitude`, `longitude`) VALUES(?)"
 
-        const salt = bcrypt.genSaltSync(10);
-
-        const hashedPassword = bcrypt.hashSync(req.body.password, salt);
-
-        const q = "insert into users(`username`, `password`) value(?)"
-
-        const values = [req.body.username, hashedPassword];
+        const values = [name, address, latitude, longitude];
 
         db.query(q, [values], (err, data) => {
             if (err) return res.status(500).json(err);
-            return res.status(200).json("User has been created.");
+            return res.status(200).json({
+                message: "User has been created."
+            });
         });
 
-    });
-
-
+    } catch (error) {
+        res.status(500).json({ error: 'Database error', details: error });
+    }
 }
-export const login = (req, res) => {
-    const { username, password } = req.body;
 
-    if (!username || !password) {
-        return res.status(400).json({ status: "error", message: "Username and password are required." });
+export const listSchools = async (req, res) => {
+    const { latitude, longitude } = req.params;
+
+    // Basic validation
+    if (!latitude || !longitude) {
+        return res.status(400).json({ error: 'Latitude and longitude are required' });
     }
 
-    const q = "SELECT * FROM users WHERE username = ?";
+    try {
+        const q = "SELECT * FROM schools";
 
-    db.query(q, [username], (err, data) => {
-        if (err) return res.status(500).json({ status: "error", message: "Server error", error: err });
+        db.query(q, [], (err, schools) => {
+            if (err) return res.status(500).json({ error: 'Database error', details: err });
 
-        if (data.length === 0) return res.status(404).json({ status: "error", message: "User not found" });
+            // Calculate distance using Haversine formula
+            const schoolsWithDistance = schools.map(school => {
+                const distance = calculateDistance(latitude, longitude, school.latitude, school.longitude);
+                return { ...school, distance };
+            });
 
-        const checkPassword = bcrypt.compareSync(password, data[0].password);
+            // Sort by distance
+            schoolsWithDistance.sort((a, b) => a.distance - b.distance);
 
-        if (!checkPassword) return res.status(400).json({ status: "error", message: "Wrong password or username!" });
+            return res.status(200).json(schoolsWithDistance);
+        });
+    } catch (error) {
+        res.status(500).json({ error: 'Unexpected error', details: error });
+    }
+};
 
-        const token = jwt.sign({ id: data[0].id }, "secretkey", { expiresIn: '1h' });
 
-        res.status(200).json({ status: "success", message: "Login successful", token });
-    });
+function calculateDistance(lat1, lon1, lat2, lon2) {
+    const R = 6371; // Radius of the Earth in km
+    const dLat = (lat2 - lat1) * Math.PI / 180;
+    const dLon = (lon2 - lon1) * Math.PI / 180;
+    const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+        Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    const distance = R * c; // Distance in km
+    return distance;
 }
